@@ -60,6 +60,7 @@
           class="btn btn-primary"
           style="width: 100%"
           (click)="applyChanges()"
+          [disabled]="headerForm.invalid"
         >
           Apply Changes
         </button>

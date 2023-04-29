@@ -37,7 +37,7 @@ export class DraggableTableComponent implements OnInit {
         this.fb.group({
           name: [header.name],
           isVisible: [header.isVisible, Validators.required],
-          sortOrder: [header.sortOrder, Validators.required],
+          sortOrder: [header.sortOrder, [Validators.required, Validators.min(1), Validators.max(this.headers.length)]],
         })
       );
     });
