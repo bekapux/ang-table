@@ -1,27 +1,14 @@
-# Table
+Draggable Table Component
+This project demonstrates a draggable table component using Angular. It allows users to show or hide columns and change the sorting order of the columns.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+Features
+Show and hide columns
+Change the sorting order of columns
+Apply changes through a form
 
-## Development server
+Usage
+After running the project, you will see a table with three columns: Firstname, Lastname, and Age. Below the table, there's a form to configure the visibility and sorting order of each column.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To show or hide a column, check or uncheck the "Visible" checkbox next to the column name in the form.
+To change the sorting order of a column, enter the desired order number in the "Sort Order" input field next to the column name in the form.
+After making changes to the form, click the "Apply Changes" button to update the table accordingly.
