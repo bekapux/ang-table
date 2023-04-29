@@ -1,0 +1,69 @@
+<div class="container pt-5">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th *ngFor="let header of visibleHeaders">
+          {{ header.name }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data">
+        <td *ngFor="let header of visibleHeaders">
+          {{ row[header.name.toLowerCase()] }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div style="min-height: 30px"></div>
+<hr />
+
+<div class="container">
+  <form [formGroup]="headerForm">
+    <div formArrayName="headers" class="row">
+      <div
+        *ngFor="
+          let headerControl of headerForm.get('headers')['controls'];
+          let i = index
+        "
+        [formGroup]="headerControl"
+        class="col-lg-4 col-sm-12"
+      >
+        <h5>{{ headerControl.get("name")?.value }}</h5>
+        <div>
+          <label for="{{ headerControl.get('name')?.value }}-visible"
+            >Visible:</label
+          >
+          <input
+            type="checkbox"
+            id="{{ headerControl.get('name')?.value }}-visible"
+            formControlName="isVisible"
+          />
+        </div>
+        <div>
+          <label for="{{ headerControl.get('name')?.value }}-order"
+            >Sort Order:</label
+          >
+          <input
+            class="form-control"
+            type="number"
+            id="{{ headerControl.get('name')?.value }}-order"
+            formControlName="sortOrder"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row pt-4">
+      <div class="col-4 offset-4">
+        <button
+          class="btn btn-primary"
+          style="width: 100%"
+          (click)="applyChanges()"
+        >
+          Apply Changes
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
